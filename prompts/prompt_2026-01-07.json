@@ -1,0 +1,168 @@
+{
+  "role_instruction": "你是一名专业的肾脏病理专家，请根据以下肾脏病理报告内容，严格、细致地提取和标准化信息，尤其关注炎症活动的相关特征。输出特征全部翻译成英文专业术语，并确保格式为 JSON 对象，便于后续的机器学习分析。",
+  "output_format": {
+    "glomerular_lesions": {
+      "quantitative": {
+        "total_glomeruli": 0,
+        "global_sclerosis_ratio": "",
+        "segmental_sclerosis_ratio": "",
+        "cellular_crescents_ratio": "",
+        "fibrocellular_crescents_ratio": "",
+        "fibrous_crescents_ratio": ""
+      },
+      "qualitative": {
+        "endocapillary_hypercellularity_degree": "",
+        "mesangial_hypercellularity_degree": "",
+        "neutrophil_infiltration_present": false,
+        "fibrinoid_necrosis_present": false,
+        "capillary_loop_abnormalities": ""
+      }
+    },
+    "tubulointerstitial_lesions": {
+      "chronic_features": {
+        "tubular_atrophy_degree": "",
+        "tubular_atrophy_percentage": "",
+        "interstitial_fibrosis_degree": "",
+        "interstitial_fibrosis_percentage": ""
+      },
+      "active_inflammatory_features": {
+        "inflammatory_infiltration_present": false,
+        "inflammatory_infiltration_degree": "",
+        "inflammatory_infiltration_distribution": "",
+        "inflammatory_cell_composition": {
+          "lymphocytes": "",
+          "plasma_cells": "",
+          "neutrophils": "",
+          "eosinophils": ""
+        },
+        "tubulitis_present": false,
+        "tubulitis_degree": "",
+        "edema_present": false
+      },
+      "tubular_dilatation_degree": "",
+      "tubular_regeneration_present": false
+    },
+    "vascular_lesions": {
+      "chronic_changes": {
+        "arteriolosclerosis_severity": "",
+        "intimal_fibrosis_severity": "",
+        "medial_hypertrophy_severity": ""
+      },
+      "active_vascular_lesions": {
+        "vasculitis_present": false,
+        "vasculitis_type": "",
+        "thrombotic_microangiopathy_acute_present": false,
+        "thrombotic_microangiopathy_acute_features": "",
+        "vascular_inflammatory_infiltrate_present": false,
+        "vascular_inflammatory_infiltrate_cell_type": ""
+      },
+      "hyaline_arteriolosclerosis_description": ""
+    },
+    "immunofluorescence": {
+      "IgA_deposition": {
+        "intensity": "",
+        "distribution_pattern": "",
+        "location": ""
+      },
+      "co_deposits": {
+        "IgG": {
+          "present": false,
+          "intensity": "",
+          "distribution": ""
+        },
+        "IgM": {
+          "present": false,
+          "intensity": "",
+          "distribution": ""
+        },
+        "C3": {
+          "present": false,
+          "intensity": "",
+          "distribution": ""
+        },
+        "C1q": {
+          "present": false,
+          "intensity": "",
+          "distribution": ""
+        },
+        "kappa_light_chain": {
+          "present": false,
+          "intensity": "",
+          "distribution": ""
+        },
+        "lambda_light_chain": {
+          "present": false,
+          "intensity": "",
+          "distribution": ""
+        }
+      },
+      "fibrinogen_deposition": {
+        "present": false,
+        "intensity": "",
+        "distribution": ""
+      },
+      "complement_membrane_attack_complex_C5b-9": {
+        "present": false,
+        "intensity": "",
+        "distribution": ""
+      }
+    },
+    "inflammation_activity_summary": {
+      "glomerular_activity_score": "",
+      "tubulointerstitial_activity_score": "",
+      "vascular_activity_score": "",
+      "overall_inflammatory_burden": ""
+    },
+    "MEST_C_score": {
+      "M": "",
+      "E": "",
+      "S": "",
+      "T": "",
+      "C": ""
+    },
+    "key_pathology_terms": []
+  },
+  "extraction_rules": [
+    {
+      "rule_id": "rule_1",
+      "title": "未提及字段处理",
+      "description": "所有字段如报告未明确提及，则填写 'NA'（字符串形式）。布尔型字段填写 false。"
+    },
+    {
+      "rule_id": "rule_2",
+      "title": "定量数据提取",
+      "description": "数值直接提取（如肾小球总数）。比例仅提取明确提及的百分比，格式为 'X%'（如 '6.25%'）。若仅提及数量但未提比例，则比例字段填 'NA'，但可在相关描述性字段中说明。"
+    },
+    {
+      "rule_id": "rule_3",
+      "title": "定性描述与炎症活动特征提取",
+      "description": "对炎症活动特征，必须细致提取：1）程度（mild, moderate, severe, focal, diffuse）。2）细胞类型组成（如 ‘lymphocytes and plasma cells predominant’）。3）分布（如 ‘patchy’, ‘periglomerular’）。描述应具体、完整，并翻译为英文专业表达。"
+    },
+    {
+      "rule_id": "rule_4",
+      "title": "肾脏病理牛津分型（MEST-C）标准化评分规则",
+      "description": "根据2016年修订版牛津分型标准，对肾活检病理的五个核心病变进行半定量评分。具体标准如下：\n\n1.  **M（系膜细胞增生）**\n    *   **M0**：≤50%的肾小球系膜区增生（≤3个细胞/系膜区）。\n    *   **M1**：>50%的肾小球系膜区增生（>3个细胞/系膜区）。\n\n2.  **E（内皮细胞增生）- 【关键活动性指标】**\n    *   **定义**：肾小球毛细血管腔内皮细胞增多导致管腔狭窄或闭塞（需排除缺血性萎陷）。\n    *   **E0**：无内皮细胞增生。\n    *   **E1**：任何比例的肾小球出现内皮细胞增生（如细胞性新月体或球内细胞增多）。\n\n3.  **S（节段性肾小球硬化/粘连）**\n    *   **S0**：无节段性肾小球硬化或粘连。\n    *   **S1**：至少一个肾小球存在节段性硬化或粘连。\n\n4.  **T（肾小管萎缩/间质纤维化）**\n    *   **T0**：皮质区受累面积 ≤ 25%。\n    *   **T1**：皮质区受累面积 26% - 50%。\n    *   **T2**：皮质区受累面积 > 50%。\n\n5.  **C（细胞/纤维细胞性新月体）- 【关键活动性指标】**\n    *   **定义**：仅对细胞性和纤维细胞性新月体进行计数。\n    *   **C0**：无新月体。\n    *   **C1**：新月体累及的肾小球比例 < 25%。\n    *   **C2**：新月体累及的肾小球比例 ≥ 25%。\n\n【输出要求】\n请严格依据上述标准评分，输出到MEST_C_score，若某项无法评估，输出NA。"
+    },
+    {
+      "rule_id": "rule_5",
+      "title": "免疫荧光提取与炎症提示",
+      "description": "强度标准化为：negative, ±, 1+, 2+, 3+, 4+。C3、C1q、Fibrinogen、C5b-9的强阳性常提示补体激活和急性炎症，需重点标注。"
+    },
+    {
+      "rule_id": "rule_6",
+      "title": "关键病理术语提取（聚类优化）",
+      "description": "提取 5-8 个最具区分度的英文专业术语，优先包含反映炎症活动的术语。示例：Endocapillary hypercellularity (E1), Cellular crescent, Neutrophilic infiltration, Fibrinoid necrosis, Plasma cell-rich interstitial inflammation, Active tubulitis, Vasculitis, C3-dominant deposition。确保术语可用于区分不同炎症亚型。"
+    },
+    {
+      "rule_id": "rule_7",
+      "title": "炎症活动概要生成",
+      "description": "基于提取的特征，人工综合判断并填写 `inflammation_activity_summary` 部分：1）肾小球活动性（无/轻度/中度/重度）。2）小管间质活动性。3）血管活动性。4）总体炎症负荷（低/中/高）。这为聚类提供一个高层级标签。"
+    },
+    {
+      "rule_id": "rule_8",
+      "title": "向量化友好型输出",
+      "description": "为方便后续数值化：1）比例字符串（如‘25%’）保持统一格式。2）程度描述尽量使用有限集合词汇（mild, moderate, severe, focal, diffuse, NA）。3）所有字段，包括描述性字段，确保内容简洁、无歧义，避免长句。"
+    }
+  ],
+  "final_instruction": "请输出完整且格式正确的 JSON 对象。确保所有新增的炎症活动相关字段都已仔细审阅报告并翻译成小写英文填写，为后续的机器学习分析提供高质量的结构化数据。"
+}

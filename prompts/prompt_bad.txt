@@ -1,0 +1,188 @@
+prompt = f"""
+你是一名专业的肾脏病理专家。请仔细分析以下IgA肾病病理报告，提取关键的结构化特征：
+
+{report_text}
+
+请严格按照以下JSON格式返回结果，不要添加任何其他文字说明、注释或Markdown标记：
+
+{{
+  "MEST_C_score": {{
+    "M": 0, 
+    "E": 0, 
+    "S": 0, 
+    "T": 0, 
+    "C": 0
+  }},  
+  "glomerular_lesions": {{
+    "quantification": {{
+      "total_glomeruli": 0,
+      "global_sclerosis": {{"count": 0, "percentage": "0%"}}
+    }},    
+    "mesangial": {{
+      "hypercellularity": {{"present": false, "description": ""}},
+      "matrix_expansion": {{"present": false, "description": ""}},
+      "interposition": {{"present": false, "description": ""}},
+      "deposits_location": {{"description": ""}}
+    }},    
+    "capillary_loops": {{
+      "segmental_sclerosis": {{"present": false, "description": ""}},
+      "global_sclerosis": {{"present": false, "description": ""}},
+      "endocapillary_hypercellularity": {{"present": false, "description": ""}},
+      "double_contours": {{"present": false, "description": ""}},
+      "capillary_wall_thickening": {{"present": false, "description": ""}},
+      "mesangiolysis": {{"present": false, "description": ""}},
+      "microaneurysms": {{"present": false, "description": ""}},
+      "necrosis": {{
+        "fibrinoid": {{"present": false, "description": ""}},
+        "capillary_loop": {{"present": false, "description": ""}},
+        "coagulative": {{"present": false, "description": ""}}
+      }}
+    }},    
+    "crescents": {{
+      "cellular": {{"present": false, "description": ""}},
+      "fibrocellular": {{"present": false, "description": ""}},
+      "fibrous": {{"present": false, "description": ""}},
+      "circumferential": {{"present": false, "description": ""}},
+      "segmental": {{"present": false, "description": ""}}
+    }},    
+    "bowmans_capsule": {{
+      "adhesions": {{"present": false, "description": ""}},
+      "capsular_fibrosis": {{"present": false, "description": ""}},
+      "capsular_rupture": {{"present": false, "description": ""}},
+      "pseudocrescents": {{"present": false, "description": ""}}
+    }},    
+    "podocytes": {{
+      "hypertrophy": {{"present": false, "description": ""}},
+      "vacuolization": {{"present": false, "description": ""}},
+      "detachment": {{"present": false, "description": ""}},
+      "foot_process_effacement": {{"present": false, "description": ""}},
+      "protein_reabsorption_droplets": {{"present": false, "description": ""}},
+      "foam_cells": {{"present": false, "description": ""}},
+      "nuclear_changes": {{"description": ""}}
+    }},    
+    "other_glomerular_features": {{
+      "glomerular_tip_lesions": {{"present": false, "description": ""}},
+      "collapsing_glomerulopathy": {{"present": false, "description": ""}},
+      "microangiopathic_changes": {{"present": false, "description": ""}},
+      "thrombi": {{"present": false, "description": ""}},
+      "crystal_deposits": {{"present": false, "description": ""}},
+      "immune_complex_deposits": {{"present": false, "description": ""}}
+    }}
+  }},  
+  "tubulointerstitial_lesions": {{
+    "tubular_atrophy": {{
+      "present": false, 
+      "description": ""
+    }},    
+    "interstitial_fibrosis": {{
+      "present": false, 
+      "description": ""
+    }},    
+    "inflammatory_infiltration": {{
+      "present": false, 
+      "cell_types": {{"description": ""}},
+      "description": ""
+    }},    
+    "tubulitis": {{
+      "present": false, 
+      "description": ""
+    }},    
+    "tubular_injury": {{
+      "acute_tubular_injury": {{"present": false, "description": ""}},
+      "tubular_dilatation": {{"present": false, "description": ""}},
+      "tubular_regeneration": {{"present": false, "description": ""}},
+      "tubular_basement_membrane": {{"description": ""}},
+      "tubular_atrophy_only": {{"present": false, "description": ""}},
+      "tubular_necrosis": {{"present": false, "description": ""}}
+    }},    
+    "tubular_casts": {{
+      "present": false, 
+      "types": {{"description": ""}},
+      "description": ""
+    }},    
+    "interstitial_edema": {{"present": false, "description": ""}},    
+    "interstitial_hemorrhage": {{"present": false, "description": ""}},    
+    "peritubular_capillary_abnormalities": {{
+      "rarefaction": {{"present": false, "description": ""}},
+      "dilatation": {{"present": false, "description": ""}},
+      "congestion": {{"present": false, "description": ""}},
+      "capillaritis": {{"present": false, "description": ""}},
+      "description": ""
+    }},    
+    "interstitial_foam_cells": {{"present": false, "description": ""}}
+  }},
+    "vascular_lesions": {{
+    "arterial_lesions": {{
+      "intimal_fibrosis": {{"present": false, "description": ""}},
+      "medial_hypertrophy": {{"present": false, "description": ""}},
+      "medial_atrophy": {{"present": false, "description": ""}},
+      "medial_fibrosis": {{"present": false, "description": ""}},
+      "arteriosclerosis": {{"present": false, "description": ""}},
+      "arteritis": {{"present": false, "description": ""}},
+      "intimal_mucoid_change": {{"present": false, "description": ""}}
+    }},    
+    "arteriolar_lesions": {{
+      "hyalinosis": {{"present": false, "description": ""}},
+      "arteriolosclerosis": {{"present": false, "description": ""}},
+      "fibrinoid_necrosis": {{"present": false, "description": ""}},
+      "onion_skin_lesions": {{"present": false, "description": ""}},
+      "arteriolar_microaneurysms": {{"present": false, "description": ""}},
+      "arteriolar_thrombi": {{"present": false, "description": ""}}
+    }},    
+    "thrombotic_microangiopathy": {{
+      "present": false,
+      "description": ""
+    }},    
+    "inflammatory_vascular_lesions": {{
+      "vasculitis": {{"present": false, "description": ""}},
+      "perivascular_inflammation": {{"present": false, "description": ""}}
+    }},    
+    "vascular_calcification": {{"present": false, "description": ""}}
+  }},  
+  "immunofluorescence": {{
+    "IgA_deposition": {{
+      "description": ""
+    }},    
+    "co_deposits": {{
+      "IgG": {{"presence": false, "description": ""}},
+      "IgM": {{"presence": false, "description": ""}},
+      "C3": {{"presence": false, "description": ""}},
+      "C1q": {{"presence": false, "description": ""}},
+      "fibrinogen": {{"presence": false, "description": ""}},
+      "lambda_light_chains": {{"presence": false, "description": ""}},
+      "kappa_light_chains": {{"presence": false, "description": ""}},
+      "C4d": {{"presence": false, "description": ""}}
+    }},    
+    "staining_pattern": {{"description": ""}},
+    "capillary_loop_deposition": {{"present": false, "description": ""}},
+    "mesangial_predominance": false,
+    "tubular_basement_membrane_staining": {{"present": false, "description": ""}},
+    "vascular_staining": {{"present": false, "description": ""}}
+  }},  
+  "key_pathology_terms": []
+}}
+
+提取规则：
+1. 数值字段：使用数字
+2. 布尔字段：使用true/false
+3. 比例字段：
+   - 仅在报告中明确提到比例时使用百分比形式（如"12.5%"）
+   - 对于肾小球整体硬化，如果有总肾小球数和硬化肾小球数，可以计算比例
+   - 其他比例只在报告中明确提到时才提取，不要自行计算
+4. 如果报告中未提及某些特征，请使用"unmentioned"（描述字段使用空字符串""）
+5. 所有中文字符请翻译为英文专业术语
+6. 关键病理术语应提取3-5个最具特征性的专业术语（如：mesangial hypercellularity, endocapillary proliferation, segmental sclerosis等）
+7. 根据牛津分型(MEST-C)标准计算M、E、S、T、C分值：
+   - M分值：M0（<50%肾小球系膜细胞增生），M1（≥50%肾小球系膜细胞增生）
+   - E分值：E0（无毛细血管内增生），E1（有毛细血管内增生）
+   - S分值：S0（无节段性硬化），S1（有节段性硬化）
+   - T分值：T0（<25%皮质小管萎缩/间质纤维化），T1（25-50%），T2（>50%）
+   - C分值：C0（无新月体），C1（<25%肾小球新月体），C2（≥25%肾小球新月体）
+8. 确保所有数组字段使用[]表示空数组
+9. 对于描述性字段，提取报告中具体的病理描述
+10. 对于分级/程度字段，提取报告中明确提到的术语，不要自行判断
+11. 对于分布字段，提取报告中明确提到的术语，不要自行判断
+12. 对于免疫荧光强度，提取报告中明确提到的术语
+13. 特别注意提取报告中明确提及的定量数据（如计数、百分比），但不要计算未明确提到的比例
+14. 确保JSON结构完整，没有语法错误
+"""
