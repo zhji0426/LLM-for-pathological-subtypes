@@ -1,0 +1,126 @@
+{
+  "glomerular_lesions": {
+    "quantitative": {
+      "total_glomeruli": 11,
+      "global_sclerosis_ratio": "6/11",
+      "segmental_sclerosis_ratio": "1/11",
+      "cellular_crescents_ratio": "NA",
+      "fibrocellular_crescents_ratio": "NA",
+      "fibrous_crescents_ratio": "NA"
+    },
+    "qualitative": {
+      "endocapillary_hypercellularity_degree": "NA",
+      "mesangial_hypercellularity_degree": "absent",
+      "neutrophil_infiltration_present": false,
+      "fibrinoid_necrosis_present": false,
+      "capillary_loop_abnormalities": "shrinkage with Bowman's capsule thickening and fibrosis"
+    }
+  },
+  "tubulointerstitial_lesions": {
+    "chronic_features": {
+      "tubular_atrophy_degree": "severe",
+      "tubular_atrophy_percentage": "patchy",
+      "interstitial_fibrosis_degree": "severe",
+      "interstitial_fibrosis_percentage": "diffuse"
+    },
+    "active_inflammatory_features": {
+      "inflammatory_infiltration_present": true,
+      "inflammatory_infiltration_degree": "severe",
+      "inflammatory_infiltration_distribution": "diffuse",
+      "inflammatory_cell_composition": {
+        "lymphocytes": "predominant",
+        "plasma_cells": "NA",
+        "neutrophils": "absent",
+        "eosinophils": "occasional"
+      },
+      "tubulitis_present": false,
+      "tubulitis_degree": "NA",
+      "edema_present": false
+    },
+    "tubular_dilatation_degree": "present",
+    "tubular_regeneration_present": false
+  },
+  "vascular_lesions": {
+    "chronic_changes": {
+      "arteriolosclerosis_severity": "severe",
+      "intimal_fibrosis_severity": "severe",
+      "medial_hypertrophy_severity": "NA"
+    },
+    "active_vascular_lesions": {
+      "vasculitis_present": false,
+      "vasculitis_type": "NA",
+      "thrombotic_microangiopathy_acute_present": false,
+      "thrombotic_microangiopathy_acute_features": "NA",
+      "vascular_inflammatory_infiltrate_present": false,
+      "vascular_inflammatory_infiltrate_cell_type": "NA"
+    },
+    "hyaline_arteriolosclerosis_description": "diffuse hyalinosis of small renal arteries"
+  },
+  "immunofluorescence": {
+    "IgA_deposition": {
+      "intensity": "2+",
+      "distribution_pattern": "granular",
+      "location": "mesangial"
+    },
+    "co_deposits": {
+      "IgG": {
+        "present": false,
+        "intensity": "negative",
+        "distribution": "NA"
+      },
+      "IgM": {
+        "present": true,
+        "intensity": "2+",
+        "distribution": "mesangial, clumpy"
+      },
+      "C3": {
+        "present": true,
+        "intensity": "3+",
+        "distribution": "mesangial, clumpy"
+      },
+      "C1q": {
+        "present": false,
+        "intensity": "negative",
+        "distribution": "NA"
+      },
+      "kappa_light_chain": {
+        "present": false,
+        "intensity": "negative",
+        "distribution": "NA"
+      },
+      "lambda_light_chain": {
+        "present": false,
+        "intensity": "negative",
+        "distribution": "NA"
+      }
+    },
+    "fibrinogen_deposition": {
+      "present": false,
+      "intensity": "negative",
+      "distribution": "NA"
+    }
+  },
+  "inflammation_activity_summary": {
+    "glomerular_activity_score": "low",
+    "tubulointerstitial_activity_score": "high",
+    "vascular_activity_score": "low",
+    "overall_inflammatory_burden": "moderate"
+  },
+  "MEST_C_score": {
+    "M": "M0",
+    "E": "E0",
+    "S": "S1",
+    "T": "T2",
+    "C": "C0"
+  },
+  "key_pathology_terms": [
+    "Global glomerulosclerosis",
+    "Segmental glomerulosclerosis",
+    "Diffuse interstitial lymphomonocytic infiltration",
+    "Severe interstitial fibrosis",
+    "C3-dominant mesangial deposition",
+    "Hyaline arteriolosclerosis",
+    "Tubular atrophy",
+    "Protein casts"
+  ]
+}

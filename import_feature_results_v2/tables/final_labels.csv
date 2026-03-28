@@ -1,0 +1,7 @@
+﻿row_id,phID,bio_id,source_file,best_cluster_label
+0,phid0001,RB00001,pathology_features_phid0001_RB00001.json,2
+1,phid0002,RB00002,pathology_features_phid0002_RB00002.json,1
+2,phid0003,RB00003,pathology_features_phid0003_RB00003.json,3
+3,phid0004,RB00004,pathology_features_phid0004_RB00004.json,1
+4,phid0005,RB00005,pathology_features_phid0005_RB00005.json,2
+5,phid0006,RB00006,pathology_features_phid0006_RB00006.json,0

@@ -1,0 +1,42 @@
+[
+  {
+    "rank": 1,
+    "algorithm_name": "KMeans_n_clusters=4",
+    "algorithm_type": "KMeans",
+    "silhouette_score": 0.5744681909338526,
+    "n_clusters": 4,
+    "column_name": "cluster_KMeans_rank1_sil0.5745_k4"
+  },
+  {
+    "rank": 2,
+    "algorithm_name": "Hierarchical_ward_n_clusters=4",
+    "algorithm_type": "Hierarchical",
+    "silhouette_score": 0.5744681909338526,
+    "n_clusters": 4,
+    "column_name": "cluster_Hierarchical_rank2_sil0.5745_k4"
+  },
+  {
+    "rank": 3,
+    "algorithm_name": "Hierarchical_complete_n_clusters=4",
+    "algorithm_type": "Hierarchical",
+    "silhouette_score": 0.5744681909338526,
+    "n_clusters": 4,
+    "column_name": "cluster_Hierarchical_rank3_sil0.5745_k4"
+  },
+  {
+    "rank": 4,
+    "algorithm_name": "Hierarchical_average_n_clusters=4",
+    "algorithm_type": "Hierarchical",
+    "silhouette_score": 0.5744681909338526,
+    "n_clusters": 4,
+    "column_name": "cluster_Hierarchical_rank4_sil0.5745_k4"
+  },
+  {
+    "rank": 5,
+    "algorithm_name": "KMeans_n_clusters=2",
+    "algorithm_type": "KMeans",
+    "silhouette_score": 0.4752518417521919,
+    "n_clusters": 2,
+    "column_name": "cluster_KMeans_rank5_sil0.4753_k2"
+  }
+]

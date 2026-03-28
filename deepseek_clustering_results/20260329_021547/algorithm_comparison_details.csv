@@ -1,0 +1,11 @@
+﻿algorithm,parameters,silhouette,calinski_harabasz,davies_bouldin,n_clusters,noise_ratio,key
+KMeans,n_clusters=4,0.5744681909338526,11.910995460363468,0.2818156235287452,4,0.0,KMeans_n_clusters=4
+Hierarchical,"n_clusters=4, method=complete",0.5744681909338526,11.910995460363468,0.2818156235287452,4,0.0,Hierarchical_complete_n_clusters=4
+Hierarchical,"n_clusters=4, method=ward",0.5744681909338526,11.910995460363468,0.2818156235287452,4,0.0,Hierarchical_ward_n_clusters=4
+Hierarchical,"n_clusters=4, method=average",0.5744681909338526,11.910995460363468,0.2818156235287452,4,0.0,Hierarchical_average_n_clusters=4
+KMeans,n_clusters=2,0.4752518417521919,2.9307386701312685,1.1096618520940702,2,0.0,KMeans_n_clusters=2
+Spectral,n_clusters=2,0.4752518417521919,2.9307386701312685,1.1096618520940702,2,0.0,Spectral_n_clusters=2
+Hierarchical,"n_clusters=2, method=ward",0.4752518417521919,2.9307386701312685,1.1096618520940702,2,0.0,Hierarchical_ward_n_clusters=2
+Hierarchical,"n_clusters=2, method=complete",0.4752518417521919,2.9307386701312685,1.1096618520940702,2,0.0,Hierarchical_complete_n_clusters=2
+Hierarchical,"n_clusters=2, method=average",0.4752518417521919,2.9307386701312685,1.1096618520940702,2,0.0,Hierarchical_average_n_clusters=2
+Spectral,n_clusters=4,-0.27719515177156234,0.9154918589395197,1.0293102860529582,4,0.0,Spectral_n_clusters=4

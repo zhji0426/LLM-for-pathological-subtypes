@@ -1,0 +1,131 @@
+{
+  "glomerular_lesions": {
+    "quantitative": {
+      "total_glomeruli": 14,
+      "global_sclerosis_ratio": "7.14%",
+      "segmental_sclerosis_ratio": "42.86%",
+      "cellular_crescents_ratio": "NA",
+      "fibrocellular_crescents_ratio": "35.71%",
+      "fibrous_crescents_ratio": "NA"
+    },
+    "qualitative": {
+      "endocapillary_hypercellularity_degree": "mild to moderate",
+      "mesangial_hypercellularity_degree": "mild global, moderate segmental",
+      "neutrophil_infiltration_present": false,
+      "fibrinoid_necrosis_present": false,
+      "capillary_loop_abnormalities": "Segmental sclerosis, adhesion to Bowman's capsule, ischemic wrinkling"
+    }
+  },
+  "tubulointerstitial_lesions": {
+    "chronic_features": {
+      "tubular_atrophy_degree": "moderate",
+      "tubular_atrophy_percentage": "20-30%",
+      "interstitial_fibrosis_degree": "moderate",
+      "interstitial_fibrosis_percentage": "20-30%"
+    },
+    "active_inflammatory_features": {
+      "inflammatory_infiltration_present": true,
+      "inflammatory_infiltration_degree": "moderate",
+      "inflammatory_infiltration_distribution": "patchy, multifocal",
+      "inflammatory_cell_composition": {
+        "lymphocytes": "present",
+        "plasma_cells": "NA",
+        "neutrophils": "NA",
+        "eosinophils": "NA"
+      },
+      "tubulitis_present": false,
+      "tubulitis_degree": "NA",
+      "edema_present": false
+    },
+    "tubular_dilatation_degree": "NA",
+    "tubular_regeneration_present": false
+  },
+  "vascular_lesions": {
+    "chronic_changes": {
+      "arteriolosclerosis_severity": "mild",
+      "intimal_fibrosis_severity": "NA",
+      "medial_hypertrophy_severity": "NA"
+    },
+    "active_vascular_lesions": {
+      "vasculitis_present": false,
+      "vasculitis_type": "NA",
+      "thrombotic_microangiopathy_acute_present": false,
+      "thrombotic_microangiopathy_acute_features": "NA",
+      "vascular_inflammatory_infiltrate_present": false,
+      "vascular_inflammatory_infiltrate_cell_type": "NA"
+    },
+    "hyaline_arteriolosclerosis_description": "NA"
+  },
+  "immunofluorescence": {
+    "IgA_deposition": {
+      "intensity": "3+",
+      "distribution_pattern": "diffuse global",
+      "location": "mesangial, small clumps"
+    },
+    "co_deposits": {
+      "IgG": {
+        "present": false,
+        "intensity": "negative",
+        "distribution": "NA"
+      },
+      "IgM": {
+        "present": true,
+        "intensity": "±-1+",
+        "distribution": "diffuse global mesangial"
+      },
+      "C3": {
+        "present": true,
+        "intensity": "2+",
+        "distribution": "diffuse global mesangial"
+      },
+      "C1q": {
+        "present": false,
+        "intensity": "negative",
+        "distribution": "NA"
+      },
+      "kappa_light_chain": {
+        "present": true,
+        "intensity": "1+",
+        "distribution": "diffuse global mesangial"
+      },
+      "lambda_light_chain": {
+        "present": true,
+        "intensity": "2+",
+        "distribution": "diffuse global mesangial"
+      }
+    },
+    "fibrinogen_deposition": {
+      "present": false,
+      "intensity": "negative",
+      "distribution": "NA"
+    },
+    "complement_membrane_attack_complex_C5b-9": {
+      "present": false,
+      "intensity": "NA",
+      "distribution": "NA"
+    }
+  },
+  "inflammation_activity_summary": {
+    "glomerular_activity_score": "moderate",
+    "tubulointerstitial_activity_score": "moderate",
+    "vascular_activity_score": "none",
+    "overall_inflammatory_burden": "moderate"
+  },
+  "MEST_C_score": {
+    "M": "M1",
+    "E": "E1",
+    "S": "S1",
+    "T": "T1",
+    "C": "C1"
+  },
+  "key_pathology_terms": [
+    "IgA dominant deposition (3+)",
+    "Endocapillary hypercellularity (E1)",
+    "Fibrocellular crescent",
+    "Segmental glomerulosclerosis",
+    "Lymphomonocytic interstitial infiltration",
+    "C3 co-deposition (2+)",
+    "Mesangial hypercellularity (M1)",
+    "Tubular atrophy/interstitial fibrosis (T1)"
+  ]
+}

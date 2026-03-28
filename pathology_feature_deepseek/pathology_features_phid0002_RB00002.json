@@ -1,0 +1,131 @@
+{
+  "glomerular_lesions": {
+    "quantitative": {
+      "total_glomeruli": 13,
+      "global_sclerosis_ratio": "NA",
+      "segmental_sclerosis_ratio": "NA",
+      "cellular_crescents_ratio": "15.38%",
+      "fibrocellular_crescents_ratio": "NA",
+      "fibrous_crescents_ratio": "NA"
+    },
+    "qualitative": {
+      "endocapillary_hypercellularity_degree": "NA",
+      "mesangial_hypercellularity_degree": "mild to moderate",
+      "neutrophil_infiltration_present": false,
+      "fibrinoid_necrosis_present": false,
+      "capillary_loop_abnormalities": "Double contours present"
+    }
+  },
+  "tubulointerstitial_lesions": {
+    "chronic_features": {
+      "tubular_atrophy_degree": "moderate to severe",
+      "tubular_atrophy_percentage": "multifocal",
+      "interstitial_fibrosis_degree": "moderate to severe",
+      "interstitial_fibrosis_percentage": "multifocal"
+    },
+    "active_inflammatory_features": {
+      "inflammatory_infiltration_present": true,
+      "inflammatory_infiltration_degree": "moderate to severe",
+      "inflammatory_infiltration_distribution": "diffuse",
+      "inflammatory_cell_composition": {
+        "lymphocytes": "predominant",
+        "plasma_cells": "NA",
+        "neutrophils": "absent",
+        "eosinophils": "occasional"
+      },
+      "tubulitis_present": false,
+      "tubulitis_degree": "NA",
+      "edema_present": true
+    },
+    "tubular_dilatation_degree": "focal",
+    "tubular_regeneration_present": false
+  },
+  "vascular_lesions": {
+    "chronic_changes": {
+      "arteriolosclerosis_severity": "NA",
+      "intimal_fibrosis_severity": "focal",
+      "medial_hypertrophy_severity": "NA"
+    },
+    "active_vascular_lesions": {
+      "vasculitis_present": false,
+      "vasculitis_type": "NA",
+      "thrombotic_microangiopathy_acute_present": false,
+      "thrombotic_microangiopathy_acute_features": "NA",
+      "vascular_inflammatory_infiltrate_present": false,
+      "vascular_inflammatory_infiltrate_cell_type": "NA"
+    },
+    "hyaline_arteriolosclerosis_description": "multifocal"
+  },
+  "immunofluorescence": {
+    "IgA_deposition": {
+      "intensity": "2+ to 3+",
+      "distribution_pattern": "diffuse global mesangial branching",
+      "location": "mesangial"
+    },
+    "co_deposits": {
+      "IgG": {
+        "present": false,
+        "intensity": "negative",
+        "distribution": "NA"
+      },
+      "IgM": {
+        "present": true,
+        "intensity": "2+",
+        "distribution": "diffuse global mesangial branching"
+      },
+      "C3": {
+        "present": true,
+        "intensity": "1+ to 2+",
+        "distribution": "diffuse global mesangial branching"
+      },
+      "C1q": {
+        "present": false,
+        "intensity": "negative",
+        "distribution": "NA"
+      },
+      "kappa_light_chain": {
+        "present": true,
+        "intensity": "2+",
+        "distribution": "diffuse global mesangial branching"
+      },
+      "lambda_light_chain": {
+        "present": true,
+        "intensity": "2+ to 3+",
+        "distribution": "diffuse global mesangial branching"
+      }
+    },
+    "fibrinogen_deposition": {
+      "present": false,
+      "intensity": "negative",
+      "distribution": "NA"
+    },
+    "complement_membrane_attack_complex_C5b-9": {
+      "present": false,
+      "intensity": "NA",
+      "distribution": "NA"
+    }
+  },
+  "inflammation_activity_summary": {
+    "glomerular_activity_score": "moderate",
+    "tubulointerstitial_activity_score": "moderate to severe",
+    "vascular_activity_score": "low",
+    "overall_inflammatory_burden": "moderate to high"
+  },
+  "MEST_C_score": {
+    "M": "M1",
+    "E": "E1",
+    "S": "S1",
+    "T": "T1",
+    "C": "C1"
+  },
+  "key_pathology_terms": [
+    "Cellular crescent",
+    "Mesangial hypercellularity (M1)",
+    "Endocapillary hypercellularity (E1)",
+    "Diffuse interstitial mononuclear cell infiltration",
+    "K-W nodules",
+    "Double contours",
+    "IgA-dominant deposition",
+    "C3 co-deposition"
+  ]
+}

@@ -1,0 +1,7 @@
+phID,bio_id,best_cluster_label,cluster_KMeans_rank1_sil0.5745_k4,cluster_Hierarchical_rank2_sil0.5745_k4,cluster_Hierarchical_rank3_sil0.5745_k4,cluster_Hierarchical_rank4_sil0.5745_k4,cluster_KMeans_rank5_sil0.4753_k2
+phid0004,RB00004,1,1,2,2,2,0
+phid0001,RB00001,2,2,0,0,0,1
+phid0006,RB00006,0,0,1,1,1,1
+phid0002,RB00002,1,1,2,2,2,0
+phid0003,RB00003,3,3,3,3,3,0
+phid0005,RB00005,2,2,0,0,0,1

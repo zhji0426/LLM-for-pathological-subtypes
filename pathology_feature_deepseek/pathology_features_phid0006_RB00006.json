@@ -1,0 +1,131 @@
+{
+  "glomerular_lesions": {
+    "quantitative": {
+      "total_glomeruli": 18,
+      "global_sclerosis_ratio": "33.33%",
+      "segmental_sclerosis_ratio": "NA",
+      "cellular_crescents_ratio": "NA",
+      "fibrocellular_crescents_ratio": "NA",
+      "fibrous_crescents_ratio": "NA"
+    },
+    "qualitative": {
+      "endocapillary_hypercellularity_degree": "NA",
+      "mesangial_hypercellularity_degree": "focal mild",
+      "neutrophil_infiltration_present": false,
+      "fibrinoid_necrosis_present": false,
+      "capillary_loop_abnormalities": "ischemic collapse (3 glomeruli), Bowman's capsule thickening, periglomerular fibrosis"
+    }
+  },
+  "tubulointerstitial_lesions": {
+    "chronic_features": {
+      "tubular_atrophy_degree": "mild",
+      "tubular_atrophy_percentage": "20%",
+      "interstitial_fibrosis_degree": "mild",
+      "interstitial_fibrosis_percentage": "20%"
+    },
+    "active_inflammatory_features": {
+      "inflammatory_infiltration_present": true,
+      "inflammatory_infiltration_degree": "focal mild",
+      "inflammatory_infiltration_distribution": "patchy",
+      "inflammatory_cell_composition": {
+        "lymphocytes": "present",
+        "plasma_cells": "NA",
+        "neutrophils": "NA",
+        "eosinophils": "present"
+      },
+      "tubulitis_present": false,
+      "tubulitis_degree": "NA",
+      "edema_present": false
+    },
+    "tubular_dilatation_degree": "NA",
+    "tubular_regeneration_present": false
+  },
+  "vascular_lesions": {
+    "chronic_changes": {
+      "arteriolosclerosis_severity": "mild",
+      "intimal_fibrosis_severity": "moderate",
+      "medial_hypertrophy_severity": "NA"
+    },
+    "active_vascular_lesions": {
+      "vasculitis_present": false,
+      "vasculitis_type": "NA",
+      "thrombotic_microangiopathy_acute_present": false,
+      "thrombotic_microangiopathy_acute_features": "NA",
+      "vascular_inflammatory_infiltrate_present": false,
+      "vascular_inflammatory_infiltrate_cell_type": "NA"
+    },
+    "hyaline_arteriolosclerosis_description": "focal mild arteriolar hyalinosis"
+  },
+  "immunofluorescence": {
+    "IgA_deposition": {
+      "intensity": "2+",
+      "distribution_pattern": "granular",
+      "location": "diffuse global mesangial"
+    },
+    "co_deposits": {
+      "IgG": {
+        "present": false,
+        "intensity": "negative",
+        "distribution": "NA"
+      },
+      "IgM": {
+        "present": true,
+        "intensity": "1+",
+        "distribution": "diffuse global mesangial granular"
+      },
+      "C3": {
+        "present": true,
+        "intensity": "2+",
+        "distribution": "granular in small vessel walls (glomeruli negative)"
+      },
+      "C1q": {
+        "present": false,
+        "intensity": "negative",
+        "distribution": "NA"
+      },
+      "kappa_light_chain": {
+        "present": true,
+        "intensity": "2+",
+        "distribution": "diffuse global mesangial granular"
+      },
+      "lambda_light_chain": {
+        "present": true,
+        "intensity": "2+",
+        "distribution": "diffuse global mesangial granular"
+      }
+    },
+    "fibrinogen_deposition": {
+      "present": true,
+      "intensity": "1+",
+      "distribution": "diffuse global mesangial granular"
+    },
+    "complement_membrane_attack_complex_C5b-9": {
+      "present": false,
+      "intensity": "NA",
+      "distribution": "NA"
+    }
+  },
+  "inflammation_activity_summary": {
+    "glomerular_activity_score": "mild",
+    "tubulointerstitial_activity_score": "mild",
+    "vascular_activity_score": "none",
+    "overall_inflammatory_burden": "low"
+  },
+  "MEST_C_score": {
+    "M": "M0",
+    "E": "E0",
+    "S": "S0",
+    "T": "T0",
+    "C": "C0"
+  },
+  "key_pathology_terms": [
+    "IgA-dominant deposition",
+    "Mesangial hypercellularity (focal mild)",
+    "Interstitial lymphomonocytic infiltration",
+    "Eosinophilic infiltration",
+    "C3 deposition in vessel walls",
+    "Global glomerulosclerosis",
+    "Arteriolar hyalinosis",
+    "Intimal fibrosis"
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "file_path": "E:\\BaiduSyncdisk\\投稿\\IgAN\\Cluster_LLM\\LLM-for-pathological-subtypes\\demo_data\\pathology_ollama_embed_deepseek.csv",
+  "original_shape": [
+    6,
+    16384
+  ],
+  "reduced_shape": [
+    6,
+    3
+  ],
+  "best_labels": [
+    1,
+    2,
+    0,
+    1,
+    3,
+    2
+  ],
+  "best_result": {
+    "labels": [
+      1,
+      2,
+      0,
+      1,
+      3,
+      2
+    ],
+    "algorithm": "KMeans",
+    "params": {
+      "n_clusters": 4
+    },
+    "silhouette": 0.5744681909338526,
+    "calinski_harabasz": 11.910995460363468,
+    "davies_bouldin": 0.2818156235287452,
+    "n_clusters": 4,
+    "n_noise": 0,
+    "noise_ratio": 0.0,
+    "cluster_stats": {
+      "min_size": "0",
+      "max_size": "2",
+      "mean_size": 1.2,
+      "std_size": 0.7483314773547883,
+      "median_size": 1.0
+    },
+    "valid_points": 6,
+    "inertia": 0.013734256829222238
+  },
+  "top_results": {
+    "KMeans_n_clusters=4": {
+      "labels": [
+        1,
+        2,
+        0,
+        1,
+        3,
+        2
+      ],
+      "algorithm": "KMeans",
+      "params": {
+        "n_clusters": 4
+      },
+      "silhouette": 0.5744681909338526,
+      "calinski_harabasz": 11.910995460363468,
+      "davies_bouldin": 0.2818156235287452,
+      "n_clusters": 4,
+      "n_noise": 0,
+      "noise_ratio": 0.0,
+      "cluster_stats": {
+        "min_size": "0",
+        "max_size": "2",
+        "mean_size": 1.2,
+        "std_size": 0.7483314773547883,
+        "median_size": 1.0
+      },
+      "valid_points": 6,
+      "inertia": 0.013734256829222238
+    },
+    "Hierarchical_ward_n_clusters=4": {
+      "labels": [
+        2,
+        0,
+        1,
+        2,
+        3,
+        0
+      ],
+      "algorithm": "Hierarchical",
+      "params": {
+        "n_clusters": 4,
+        "method": "ward"
+      },
+      "silhouette": 0.5744681909338526,
+      "calinski_harabasz": 11.910995460363468,
+      "davies_bouldin": 0.2818156235287452,
+      "n_clusters": 4,
+      "n_noise": 0,
+      "noise_ratio": 0.0,
+      "cluster_stats": {
+        "min_size": "0",
+        "max_size": "2",
+        "mean_size": 1.2,
+        "std_size": 0.7483314773547883,
+        "median_size": 1.0
+      },
+      "valid_points": 6
+    },
+    "Hierarchical_complete_n_clusters=4": {
+      "labels": [
+        2,
+        0,
+        1,
+        2,
+        3,
+        0
+      ],
+      "algorithm": "Hierarchical",
+      "params": {
+        "n_clusters": 4,
+        "method": "complete"
+      },
+      "silhouette": 0.5744681909338526,
+      "calinski_harabasz": 11.910995460363468,
+      "davies_bouldin": 0.2818156235287452,
+      "n_clusters": 4,
+      "n_noise": 0,
+      "noise_ratio": 0.0,
+      "cluster_stats": {
+        "min_size": "0",
+        "max_size": "2",
+        "mean_size": 1.2,
+        "std_size": 0.7483314773547883,
+        "median_size": 1.0
+      },
+      "valid_points": 6
+    },
+    "Hierarchical_average_n_clusters=4": {
+      "labels": [
+        2,
+        0,
+        1,
+        2,
+        3,
+        0
+      ],
+      "algorithm": "Hierarchical",
+      "params": {
+        "n_clusters": 4,
+        "method": "average"
+      },
+      "silhouette": 0.5744681909338526,
+      "calinski_harabasz": 11.910995460363468,
+      "davies_bouldin": 0.2818156235287452,
+      "n_clusters": 4,
+      "n_noise": 0,
+      "noise_ratio": 0.0,
+      "cluster_stats": {
+        "min_size": "0",
+        "max_size": "2",
+        "mean_size": 1.2,
+        "std_size": 0.7483314773547883,
+        "median_size": 1.0
+      },
+      "valid_points": 6
+    },
+    "KMeans_n_clusters=2": {
+      "labels": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "algorithm": "KMeans",
+      "params": {
+        "n_clusters": 2
+      },
+      "silhouette": 0.4752518417521919,
+      "calinski_harabasz": 2.9307386701312685,
+      "davies_bouldin": 1.1096618520940702,
+      "n_clusters": 2,
+      "n_noise": 0,
+      "noise_ratio": 0.0,
+      "cluster_stats": {
+        "min_size": "0",
+        "max_size": "3",
+        "mean_size": 2.0,
+        "std_size": 1.4142135623730951,
+        "median_size": 3.0
+      },
+      "valid_points": 6,
+      "inertia": 0.14954669352195477
+    }
+  },
+  "reduced_embeddings": [
+    [
+      0.17575150114176272,
+      -0.09587406946446476,
+      -0.10951855690861068
+    ],
+    [
+      -0.09404939127367369,
+      -0.03637428714567136,
+      0.09146656419022149
+    ],
+    [
+      -0.18733608579490044,
+      0.06091281320062027,
+      -0.1592131483013844
+    ],
+    [
+      0.10191238017724079,
+      -0.11113729810086466,
+      0.03435930385180084
+    ],
+    [
+      0.12583189636921352,
+      0.23573349305665728,
+      0.04828824580569153
+    ],
+    [
+      -0.12211030061964288,
+      -0.05326065154627676,
+      0.09461759136228115
+    ]
+  ],
+  "df": "E:\\BaiduSyncdisk\\投稿\\IgAN\\Cluster_LLM\\LLM-for-pathological-subtypes\\deepseek_clustering_results\\20260329_021547\\dataframe_0.csv",
+  "timestamp": "2026-03-29T02:15:47.134700",
+  "parameters": {
+    "target_dim": 3,
+    "reduction_method": "two_stage_pca",
+    "pca_intermediate_dim": 5,
+    "exclude_columns": [
+      "phID",
+      "bio_id",
+      "source_file",
+      "total_embedding_dim",
+      "timestamp",
+      "glomerular_lesions_text_preview",
+      "tubulointerstitial_lesions_text_preview",
+      "vascular_lesions_text_preview",
+      "immunofluorescence_text_preview"
+    ],
+    "embedding_columns": null,
+    "sample_size": null
+  },
+  "cluster_distribution": "E:\\BaiduSyncdisk\\投稿\\IgAN\\Cluster_LLM\\LLM-for-pathological-subtypes\\deepseek_clustering_results\\20260329_021547\\dataframe_1.csv"
+}

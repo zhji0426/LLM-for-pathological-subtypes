@@ -1,0 +1,131 @@
+{
+  "glomerular_lesions": {
+    "quantitative": {
+      "total_glomeruli": 6,
+      "global_sclerosis_ratio": "33.3%",
+      "segmental_sclerosis_ratio": "16.7%",
+      "cellular_crescents_ratio": "NA",
+      "fibrocellular_crescents_ratio": "16.7%",
+      "fibrous_crescents_ratio": "NA"
+    },
+    "qualitative": {
+      "endocapillary_hypercellularity_degree": "NA",
+      "mesangial_hypercellularity_degree": "mild to moderate",
+      "neutrophil_infiltration_present": false,
+      "fibrinoid_necrosis_present": false,
+      "capillary_loop_abnormalities": "focal ischemic wrinkling, capsular adhesion"
+    }
+  },
+  "tubulointerstitial_lesions": {
+    "chronic_features": {
+      "tubular_atrophy_degree": "focal",
+      "tubular_atrophy_percentage": "NA",
+      "interstitial_fibrosis_degree": "moderate",
+      "interstitial_fibrosis_percentage": "NA"
+    },
+    "active_inflammatory_features": {
+      "inflammatory_infiltration_present": true,
+      "inflammatory_infiltration_degree": "moderate",
+      "inflammatory_infiltration_distribution": "patchy to large confluent areas",
+      "inflammatory_cell_composition": {
+        "lymphocytes": "present",
+        "plasma_cells": "NA",
+        "neutrophils": "NA",
+        "eosinophils": "NA"
+      },
+      "tubulitis_present": false,
+      "tubulitis_degree": "NA",
+      "edema_present": false
+    },
+    "tubular_dilatation_degree": "NA",
+    "tubular_regeneration_present": false
+  },
+  "vascular_lesions": {
+    "chronic_changes": {
+      "arteriolosclerosis_severity": "focal",
+      "intimal_fibrosis_severity": "focal",
+      "medial_hypertrophy_severity": "NA"
+    },
+    "active_vascular_lesions": {
+      "vasculitis_present": false,
+      "vasculitis_type": "NA",
+      "thrombotic_microangiopathy_acute_present": false,
+      "thrombotic_microangiopathy_acute_features": "NA",
+      "vascular_inflammatory_infiltrate_present": false,
+      "vascular_inflammatory_infiltrate_cell_type": "NA"
+    },
+    "hyaline_arteriolosclerosis_description": "focal arteriolar hyalinosis"
+  },
+  "immunofluorescence": {
+    "IgA_deposition": {
+      "intensity": "3+",
+      "distribution_pattern": "diffuse global mesangial dendritic",
+      "location": "mesangial"
+    },
+    "co_deposits": {
+      "IgG": {
+        "present": false,
+        "intensity": "negative",
+        "distribution": "NA"
+      },
+      "IgM": {
+        "present": true,
+        "intensity": "2+ to 3+",
+        "distribution": "diffuse global mesangial dendritic"
+      },
+      "C3": {
+        "present": true,
+        "intensity": "2+ to 3+",
+        "distribution": "diffuse global mesangial dendritic"
+      },
+      "C1q": {
+        "present": false,
+        "intensity": "negative",
+        "distribution": "NA"
+      },
+      "kappa_light_chain": {
+        "present": true,
+        "intensity": "2+",
+        "distribution": "diffuse global mesangial dendritic"
+      },
+      "lambda_light_chain": {
+        "present": true,
+        "intensity": "3+",
+        "distribution": "diffuse global mesangial dendritic"
+      }
+    },
+    "fibrinogen_deposition": {
+      "present": false,
+      "intensity": "negative",
+      "distribution": "NA"
+    },
+    "complement_membrane_attack_complex_C5b-9": {
+      "present": false,
+      "intensity": "NA",
+      "distribution": "NA"
+    }
+  },
+  "inflammation_activity_summary": {
+    "glomerular_activity_score": "mild",
+    "tubulointerstitial_activity_score": "moderate",
+    "vascular_activity_score": "none",
+    "overall_inflammatory_burden": "moderate"
+  },
+  "MEST_C_score": {
+    "M": "M1",
+    "E": "E0",
+    "S": "S1",
+    "T": "T1",
+    "C": "C1"
+  },
+  "key_pathology_terms": [
+    "Mesangial hypercellularity (M1)",
+    "Segmental sclerosis (S1)",
+    "Fibrocellular crescent",
+    "Mononuclear interstitial inflammation",
+    "Tubular atrophy",
+    "IgA-dominant deposition",
+    "C3 co-deposition",
+    "Arteriolar hyalinosis"
+  ]
+}
