@@ -914,7 +914,7 @@ if (TRUE) {
 
   }
 
-  ## save plots data
+  ## save plots demo_data
   if(FALSE){
     save(clinical_interaction_data, pathology_percent, pathology_data,
     file = "dataPlots/Figure_Data_Clinical_Pathology_nature.RData")
