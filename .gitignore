@@ -10,6 +10,4 @@ import_feature_results_v2/
 pathology_feature_deepseek/
 pathology_feature_deepseek_cleaned/
 
-# Demo data (unless it's small sample data needed for the project)
-demo_data/
 "@ | Out-File -FilePath .gitignore -Encoding utf8 -Append
