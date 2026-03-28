@@ -29,7 +29,7 @@ import shap
 import statsmodels.api as sm
 from lifelines import CoxPHFitter, KaplanMeierFitter
 
-from embed_ollama import SectionProcessor, EmbeddingGenerator, ReportConfig as BaseReportConfig
+from embed_ollama_03 import SectionProcessor, EmbeddingGenerator, ReportConfig as BaseReportConfig
 
 warnings.filterwarnings("ignore")
 
@@ -1132,21 +1132,22 @@ def main(cfg: PipelineConfig):
         traceback.print_exc()
         raise
 
+def get_base_dir() -> str:
+    """获取当前脚本所在目录"""
+    return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 if __name__ == "__main__":
+    base_dir = get_base_dir()
     cfg = PipelineConfig(
-        json_dir=r"E:\igan_nephropathy_research2\pathology_feature_deepseek_cleaned",
-        flattened_csv=r"E:\igan_nephropathy_research2\data\pathology_lower_flattened_deepseek.csv",
-        embedding_cache_dir=r"E:\igan_nephropathy_research2\embedding_cache",
-        output_dir=r"E:\igan_nephropathy_research2\import_feature_results_v2",
-        label_csv=r"E:\igan_nephropathy_research2\deepseek_clustering_results\20251227_144322\clustered_data_simplified.csv",
-        outcome_csv=r"E:\igan_nephropathy_research2\data\IgAN_Baseline_Characteristics_clusters.csv",
+        json_dir=os.path.join(base_dir, "pathology_feature_deepseek_cleaned"),
+        flattened_csv=os.path.join(base_dir, "demo_data","pathology_lower_flattened_deepseek.csv"),
+        embedding_cache_dir=os.path.join(base_dir, "embedding_cache"),
+        output_dir= os.path.join(base_dir, "import_feature_results_v2"),
+        label_csv=os.path.join(base_dir, "deepseek_clustering_results/20260329_021547/clustered_data_simplified.csv"),
         model_name="qwen3-embedding:latest",
         max_workers=36,
         bootstrap_iterations=200,
         binary_outcomes=["endpoint"],
-        continuous_outcomes=["s_egfr"],
-        survival_specs=[("end_follow", "endpoint")],
-        adjust_covariates=["age", "Gender", "eGFR_onset", "up24"],
+        survival_specs=[("end_follow", "endpoint")]
     )
     main(cfg)

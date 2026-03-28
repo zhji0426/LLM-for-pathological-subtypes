@@ -15,6 +15,7 @@ from sklearn.metrics import silhouette_score
 from matplotlib import pyplot as plt
 # 导入Path
 from pathlib import Path
+import os
 
 
 
@@ -722,6 +723,10 @@ def plot_algorithm_agreement(agree_df: pd.DataFrame, out_png: str) -> None:
     fig.savefig(out_png, dpi=300, bbox_inches="tight")
     plt.close(fig)
 
+def get_base_dir() -> str:
+    """获取当前脚本所在目录"""
+    return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # =========================
 # 6. 示例主程序
 # =========================
@@ -730,7 +735,9 @@ if __name__ == "__main__":
     # -------------------------
     # 读取 embedding 矩阵
     # -------------------------
-    df = pd.read_csv(r"E:\igan_nephropathy_research2\data\pathology_ollama_embed_deepseek.csv")
+
+    base_dir = get_base_dir()
+    df = pd.read_csv(os.path.join(base_dir, "demo_data", "pathology_ollama_embed_deepseek.csv"))
     embed_cols = [col for col in df.columns if col.startswith("emb_")]
     X = df[embed_cols].values.astype(np.float32)
 
@@ -741,7 +748,7 @@ if __name__ == "__main__":
         n_clusters=2
     )
 
-    out_dir = Path(r"E:\igan_nephropathy_research2\results\stability")
+    out_dir = Path(os.path.join(base_dir,r"results\stability"))
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # 1) 比较不同聚类方法

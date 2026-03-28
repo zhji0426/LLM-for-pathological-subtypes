@@ -657,9 +657,13 @@ def build_integrated_figure(
         str(out_prefix) + "_panel_a_second_level_labels.csv", index=False
     )
 
+def get_base_dir() -> str:
+    """获取当前脚本所在目录"""
+    return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def main():
-    data_dir = Path(r"E:\igan_nephropathy_research2\import_feature_results_v2\tables")
+    data_dir = get_base_dir()
+    data_dir = Path(os.path.join(data_dir, r"import_feature_results\tables"))
     build_integrated_figure(
         shap_raw_path=data_dir / "shap_top_features_raw.csv",
         shap_encoded_path=data_dir / "shap_top_features_encoded.csv",

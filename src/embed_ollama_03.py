@@ -31,6 +31,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+def get_base_dir() -> str:
+    """获取当前脚本所在目录"""
+    return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 @dataclass
 class ReportConfig:
@@ -658,7 +661,7 @@ def create_paths(model_base: str, model_name: str = None) -> tuple:
     Returns:
         tuple: (input_dir, output_csv, flattened_csv)
     """
-    base_dir = r"E:\igan_nephropathy_research2"
+    base_dir = get_base_dir()
 
     # 如果提供了完整模型名称但未提供model_base，则从model_name提取
     if model_name and not model_base:
@@ -668,10 +671,12 @@ def create_paths(model_base: str, model_name: str = None) -> tuple:
             model_base = model_name
 
     input_dir = os.path.join(base_dir, f'pathology_feature_{model_base}_cleaned')
-    output_csv = os.path.join(base_dir, 'data', f'pathology_ollama_embed_{model_base}.csv')
-    flattened_csv = os.path.join(base_dir, 'data', f'pathology_lower_flattened_{model_base}.csv')
+    output_csv = os.path.join(base_dir, 'demo_data', f'pathology_ollama_embed_{model_base}.csv')
+    flattened_csv = os.path.join(base_dir, 'demo_data', f'pathology_lower_flattened_{model_base}.csv')
 
     return input_dir, output_csv, flattened_csv
+
+
 
 
 def main(model_base: str = None, model_name: str = None):
@@ -707,11 +712,13 @@ def main(model_base: str = None, model_name: str = None):
     logger.info(f"开始处理病理报告，模型: {model_name}")
     logger.info("=" * 60)
 
+    base_path = get_base_dir()
+
     # 检查输入目录是否存在
     if not os.path.exists(input_dir):
         logger.error(f"输入目录不存在: {input_dir}")
         # 尝试创建目录或使用备用路径
-        alternative_input_dir = os.path.join(r"E:\igan_nephropathy_research2", "pathology_feature_json")
+        alternative_input_dir = os.path.join(base_path, "pathology_feature_json")
         if os.path.exists(alternative_input_dir):
             logger.info(f"使用备用目录: {alternative_input_dir}")
             input_dir = alternative_input_dir
@@ -774,5 +781,13 @@ def batch_process_models(models: List[str] = None):
 
 if __name__ == "__main__":
     # 方法3：批量处理多个模型
-    results = batch_process_models(models=['qwen', 'deepseek'])
+    for i in ["deepseek"]:
+        input_dir, output_csv, flattened_csv = create_paths(i)
+        _ = process_reports(
+            model_name='qwen3-embedding:latest',
+            input_dir=input_dir,
+            output_csv=output_csv,
+            flattened_csv=flattened_csv,
+            max_workers=48
+        )
 

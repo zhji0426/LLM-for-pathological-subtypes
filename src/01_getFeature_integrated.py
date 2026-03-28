@@ -88,10 +88,7 @@ def extract_structured_features_safe(
     if prompt_config is None:
         if prompt_config_path is None:
             # 使用默认路径
-            if llm_provider == "deepseek":
-                prompt_config_path = r"E:\igan_nephropathy_research2\prompts\prompt_2025-12-12.json"
-            else:
-                prompt_config_path = r"E:\igan_nephropathy_research2\prompts\prompt_2025-12-10.json"
+            prompt_config_path = r"E:\igan_nephropathy_research2\prompts\prompt_2025-12-12.json"
 
         if not os.path.exists(prompt_config_path):
             raise FileNotFoundError(f"Prompt配置文件不存在: {prompt_config_path}")
@@ -492,8 +489,13 @@ def process_reports_batch(
         time.sleep(1)
 
 
+def get_base_dir() -> str:
+    """获取当前脚本所在目录"""
+    return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
 def main(
-        data_path: str = r"E:\igan_nephropathy_research2\data\iga_pathology.csv",
+        data_path: str = r"E:\igan_nephropathy_research2\data\iga_pathology.xlsx",
         llm_provider: Literal["deepseek", "qwen"] = "deepseek",
         llm_model: Optional[str] = None,
         prompt_config_path: Optional[str] = None,
@@ -526,20 +528,21 @@ def main(
         print(f"错误: 数据文件不存在: {data_path}")
         return
 
+    base_dir = get_base_dir()
+
     # 设置默认保存路径
     if save_path is None:
-        if llm_provider == "deepseek":
-            save_path = r"E:\igan_nephropathy_research2\pathology_feature_deepseek"
-        else:
-            save_path = r"E:\igan_nephropathy_research2\pathology_feature_qwen"
+        save_path = os.path.join(base_dir, f"pathology_feature_{llm_provider}")
 
     # 设置默认模型
     if llm_model is None:
         llm_model = MODEL_CONFIGS[llm_provider]["default_model"]
 
     # 读取数据
-    pathology_report = pd.read_csv(data_path,
-                                   dtype={"phID": str, "pathology_number": str})
+    pathology_report = pd.read_excel(
+        data_path,
+        dtype={"phID": str, "pathology_number": str}
+    )
 
     print(f"已加载 {len(pathology_report)} 个病理报告")
     print(f"使用 {llm_provider.upper()} API")
@@ -564,35 +567,13 @@ def main(
 
 if __name__ == "__main__":
     # 示例1：使用DeepSeek（默认）
+    base_dir = get_base_dir()
     main(
-        data_path=r"E:\igan_nephropathy_research2\data\iga_pathology.csv",
+        data_path=os.path.join(base_dir, "demo_data", "iga_pathology.xlsx"),
         llm_provider="deepseek",
         llm_model="deepseek-chat",  # 可选: deepseek-coder, deepseek-reasoner等
-        prompt_config_path=r"E:\igan_nephropathy_research2\prompts\prompt_2026-01-07.json",
+        prompt_config_path=os.path.join(base_dir, "prompts", "prompt_2026-01-07.json"),
         max_workers=40,
         overwrite=False,
         batch_mode=False
     )
-
-    # 示例2：使用Qwen
-    # main(
-    #     data_path=r"E:\igan_nephropathy_research2\data\iga_pathology.csv",
-    #     llm_provider="qwen",
-    #     llm_model="qwen-plus",  # 可选: qwen-turbo, qwen-max等
-    #     prompt_config_path=r"E:\igan_nephropathy_research2\prompts\prompt_2025-12-10.json",
-    #     max_workers=30,
-    #     overwrite=True,
-    #     batch_mode=True,
-    #     batch_size=50
-    # )
-
-    # 示例3：使用不同的prompt配置文件
-    # main(
-    #     data_path=r"E:\igan_nephropathy_research2\data\iga_pathology.csv",
-    #     llm_provider="deepseek",
-    #     llm_model="deepseek-chat",
-    #     prompt_config_path=r"E:\igan_nephropathy_research2\prompts\prompt_new_version.json",
-    #     save_path=r"E:\igan_nephropathy_research2\pathology_feature_deepseek_v2",
-    #     max_workers=20,
-    #     overwrite=True
-    # )
